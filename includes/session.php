@@ -3,7 +3,7 @@
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 include_once 'dbconnection.php';
 $connection=connection();
-////session_start();// Starting Session
+session_start();// Starting Session
 // Storing Session
 $user_check=$_SESSION['login_user'];
 // echo "<pre>";
@@ -16,6 +16,6 @@ $login_session =$row['email'];
 $login_id=$row['id'];
 if(!isset($login_session)){
 mysqli_close($connection); // Closing Connection
-////header('Location: index.php'); // Redirecting To Home Page
+header('Location: index.php'); // Redirecting To Home Page
 }
 ?>
