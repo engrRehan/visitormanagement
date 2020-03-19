@@ -1,0 +1,211 @@
+<?php include_once 'includes/session.php';
+
+include_once('header.php');
+$con=connection();
+$rows=null;
+if($con){
+    $result=mysqli_query($con,'Select *from visitors where id='.$_GET['id']);
+    $rows=mysqli_fetch_assoc($result);
+    //print_r($rows);
+}
+?>
+    <section class="site-section pt-5">
+        <div class="container">
+
+            <div class="row blog-entries">
+                <div class="col-md-12 col-lg-8 main-content">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?php if(isset($_SESSION['success'])){ ?>
+                                <div class="alert alert-success" role="alert">
+                                    <?php echo $_SESSION['success']; ?>
+                                </div>
+                                <?php
+                            }
+                            if(isset($_SESSION['error'])){ ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php echo $_SESSION['error']; ?>
+                                </div>
+                                <?php
+                            }
+                            ?>
+                            <h3>Edit Visitor details</h3><br>
+                            <form id="contact-form" name="contact-form" action="includes/main.php" method="POST" enctype="multipart/form-data">
+                                <table width="100%" class="full-width">
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Name</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten ">
+                                            <div class="md-form">
+                                                <input type="hidden"  name="action" class="form-control" value="edit-visitor">
+                                                <input type="hidden"  name="id" class="form-control" value="<?php echo $_GET['id'];?>">
+
+                                                <input type="text" id="name" name="name" value="<?php echo $rows['name'];?>" class="form-control required">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Company</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="text" id="company" name="company" value="<?php echo $rows['company'];?>" class="form-control required">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="email" class="">Your email</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="email" id="email" name="email" value="<?php echo $rows['email'];?>" class="form-control required">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Phone</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="number" id="phone" name="phone" value="<?php echo $rows['phone'];?>" class="form-control required">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Full Address</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <textarea rows="10" cols="50" id="address" name="address" class="form-control required"><?php echo $rows['full_address'];?></textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Check In</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="text" id="checkin" value="<?php echo $rows['checkin'];?>" name="checkin" class="form-control required">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Check Out</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="text" id="checkout" value="<?php echo $rows['checkout'];?>" name="checkout" class="form-control required">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Purpose</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="text" id="purpose" value="<?php echo $rows['purpose'];?>" name="purpose" class="form-control required">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%"><label for="name" class="">Scaned ID</label></td>
+                                    <td width="70%">
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="file" name="file" class="form-control">
+                                                <img src="<?php echo 'uploads/'.$rows['id_image'];?>" style="height:200px">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="top-ten">
+                                    <td width="20%"></td>
+                                    <td width="70%">
+
+                                        <div class="col-md-6 top-ten">
+                                            <div class="md-form">
+                                                <input type="submit" id="submit" name="submit" class="btn btn-success" value="Submit">
+
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- END main-content -->
+
+                <div class="col-md-12 col-lg-4 sidebar">
+                    <div class="well">
+                        <p>Advertisement</p>
+                    </div>
+                    <div class="well">
+                        <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE8r0ORNu1amN0FMY0k5RoFZjW3l0tKteoKY95M-w_CtFL8yjx" >
+                    </div>
+                </div>
+                <!-- END sidebar -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $('#contact-form').validate({
+                rules:{
+                    '#phone':{
+                        required:true,
+                        maxLength: 10,
+
+                    },
+                    '#name':{
+                        required:true,
+                    },
+                    '#company':{
+                        required:true,
+                    },
+                    '#addess':{
+                        required:true,
+                    },
+                    '#email':{
+                        required:true,
+                        email:true
+                    },
+                    '#phone':{
+                        required:true,
+                    },
+                    '#checkin':{
+                        required:true,
+                    },
+                    '#checkout':{
+                        required:true,
+                    },
+                    '#purpose':{
+                        required:true,
+                    },
+                    '#file':{
+                        required:true,
+                    }
+                }
+            });
+        });
+    </script>
+<?php include('footer.php');?>
