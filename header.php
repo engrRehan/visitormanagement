@@ -50,12 +50,25 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about.php">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact</a>
-                        </li>
+                        <?php
+                        ///session_start();
+                        if(!isset($_SESSION['login_user'])){
+                            ?>
+                            <li><a class="nav-link" href="login.php">Login</a></li>
+                            <li><a class="nav-link"href="contact.php">Contact</a></li>
+                        <?php }else{
+                            ?>
+                            <li><a class="nav-link" href="add-visitor.php">Add visitor</a></li>
+                            <li><a class="nav-link" href="visitor-report.php" target="_blank">Visitor Report</a></li>
+                            <li><a class="nav-link" href="feedback_management.php">Feedback</a></li>
+                            <li><a class="nav-link" href="search.php">Search</a></li>
+                            <li><a class="nav-link" href="user-report.php">User Management</a></li>
+                            <li><a class="nav-link" href="account.php">My Account</a></li>
+                            <li><a class="nav-link" href="change-password.php">Change Password</a></li>
+                            <li><a class="nav-link" href="includes/main.php?action=logout">Logout</a></li>
+                            <?php
+                        }
+                        ?>
                     </ul>
 
                 </div>
