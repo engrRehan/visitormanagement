@@ -171,7 +171,7 @@ $con=connection();
                         <p>Advertisement</p>
                     </div>
                     <div class="well">
-                        <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE8r0ORNu1amN0FMY0k5RoFZjW3l0tKteoKY95M-w_CtFL8yjx" >
+                        <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE8r0ORNu1amN0FMY0k5RoFZjW3l0tKteoKY95M-w_CtFL8yjx"  >
                     </div>
                 </div>
                 <!-- END sidebar -->

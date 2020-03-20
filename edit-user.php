@@ -189,7 +189,7 @@ if($con){
                         <p>Profile of <?php echo $rows['name'];?></p>
                     </div>
                     <div class="well">
-                        <img src="uploads/<?php echo $rows['image'];?>" class="full-width">
+                        <img src="uploads/<?php echo $rows['image'];?>" class="full-width"  width="100%">
                     </div>
                 </div>
                 <!-- END sidebar -->

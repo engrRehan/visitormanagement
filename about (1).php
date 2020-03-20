@@ -25,7 +25,7 @@ if($con){
                 <p>Advertisement</p>
             </div>
             <div class="well">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE8r0ORNu1amN0FMY0k5RoFZjW3l0tKteoKY95M-w_CtFL8yjx" class="full-width">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE8r0ORNu1amN0FMY0k5RoFZjW3l0tKteoKY95M-w_CtFL8yjx" width="100%" class="full-width">
             </div>
         </div>
     </div>

@@ -23,6 +23,8 @@ if($con){
     <script src="vendor/datatables-responsive/dataTables.responsive.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
+
+
     <section class="site-section pt-5">
         <div class="container">
 
@@ -85,13 +87,13 @@ if($con){
                                             <td><?php echo $row['phone'];?></td>
                                             <td><?php echo $row['company'];?></td>
                                             <td><?php echo $row['full_address'];?></td>
-                                            <td><a href="edit-visitor.php?id=<?php echo $row['id'];?>" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a>
+                                            <td><a href="edit-visitor.php?id=<?php echo $row['id'];?>" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="fa fa-pencil"></span></button></a>
                                                 <a href="add-feedback.php?id=<?php echo $row['id'];?>" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >Feedback</button></a>
                                                 <a href="add-purpose.php?id=<?php echo $row['id'];?>" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >Purpose</button></a>
                                                 <a href="show_info.php?id=<?php echo $row['id'];?>" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >View</button></a>
 
                                                 <a href="print-gatepass.php?id=<?php echo $row['id'];?>" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >Print Gatepass</span></button></a>
-                                                <a href="includes/main.php?action=delete-visitor&id=<?php echo $row['id'];?> data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                                                <a href="includes/main.php?action=delete-visitor&id=<?php echo $row['id'];?> data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="fa fa-trash"></span></button></a></td>
                                         </tr>
                                     <?php } }
                                 ?>

@@ -19,6 +19,13 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/cea68f830e.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("images/wallpaper2.jpg");
+        }
+    </style>
+
 </head>
 <body>
 
@@ -44,28 +51,28 @@
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <a class="nav-link" style="font-size: 20px;" href="index.php">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="about.php">About</a>
+                            <a class="nav-link" style="font-size: 20px;" href="about.php">About</a>
                         </li>
                         <?php
                         ///session_start();
                         if(!isset($_SESSION['login_user'])){
                             ?>
-                            <li><a class="nav-link" href="login.php">Login</a></li>
-                            <li><a class="nav-link"href="contact.php">Contact</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="login.php">Login</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="contact.php">Contact</a></li>
                         <?php }else{
                             ?>
-                            <li><a class="nav-link" href="add-visitor.php">Add visitor</a></li>
-                            <li><a class="nav-link" href="visitor-report.php" target="_blank">Visitor Report</a></li>
-                            <li><a class="nav-link" href="feedback_management.php">Feedback</a></li>
-                            <li><a class="nav-link" href="search.php">Search</a></li>
-                            <li><a class="nav-link" href="user-report.php">User Management</a></li>
-                            <li><a class="nav-link" href="account.php">My Account</a></li>
-                            <li><a class="nav-link" href="change-password.php">Change Password</a></li>
-                            <li><a class="nav-link" href="includes/main.php?action=logout">Logout</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="add-visitor.php">Add visitor</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="visitor-report.php" target="_blank">Visitor Report</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="feedback_management.php">Feedback</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="search.php">Search</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="user-report.php">User Management</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="account.php">My Account</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="change-password.php">Change Password</a></li>
+                            <li><a class="nav-link" style="font-size: 20px;" href="includes/main.php?action=logout">Logout</a></li>
                             <?php
                         }
                         ?>
